@@ -21,22 +21,37 @@ canvas.height = height;
 // context.fill();
 
 let circleObject = {};
-circleObject.x = 500;
-circleObject.y = 200;
+circleObject.x = 700;
+circleObject.y = 400;
 circleObject.radius = 100;
+var ballRadius = 10;
+var x = canvas.width/2;
+var y = canvas.height-30;
+var dx = 2;
+var dy = -2;
 
-circleObject.draw = function(){
-  context.beginPath();
-  context.arc(circleObject.x ,circleObject.y ,circleObject.radius, 0, 2*Math.PI);
-  context.closePath();
-  context.stroke();
-  context.fill()
+
+function drawBall() {
+    context.beginPath();
+    context.arc(x, y, ballRadius, 0, Math.PI*2);
+    context.fillStyle = "#0095DD";
+    context.fill();
+    context.closePath();
 }
 
-function animate(){
-  context.clearRect(0,0,width,height);
-  circleObject.x = circleObject.x + 2;
-  circleObject.draw();
+function draw() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+
+    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+        dx = -dx;
+    }
+    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+        dy = -dy;
+    }
+
+    x += dx;
+    y += dy;
 }
 
-setInterval(animate, 0)
+setInterval(draw, 10);
