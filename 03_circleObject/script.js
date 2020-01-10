@@ -24,11 +24,11 @@ let circleObject = {};
 circleObject.x = 700;
 circleObject.y = 400;
 circleObject.radius = 100;
-var ballRadius = 10;
+var ballRadius = 100;
 var x = canvas.width/2;
-var y = canvas.height-30;
-var dx = 2;
-var dy = -2;
+var y = canvas.height/2;
+var dx = 4;
+var dy = -4;
 
 
 function drawBall() {
