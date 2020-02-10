@@ -12,7 +12,7 @@ canvas.height = height;
 let colors = ["red", "green", "blue", "yellow", "purple", "pink", "orange"];
 circles = [];
 
-for(let i =0; i<500 ;i++){
+for(let i =0; i<20 ;i++){
   let circleObject = {};
   circleObject.x = getRandomInt(0,width);
   circleObject.y = getRandomInt(0,height);
